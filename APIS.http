@@ -1,0 +1,14 @@
+#Signup
+POST http://127.0.0.1:5000/customer/signup
+Content-Type: application/json
+
+{"name": "ram", "email": "ramp@test.com", "password": "password"}
+
+###
+POST  http://127.0.0.1:5000/customer/login
+Content-Type: application/json
+
+{ "email": "ramp@test.com", "password": "password"}
+
+
+

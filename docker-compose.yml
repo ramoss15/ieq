@@ -1,0 +1,42 @@
+version: "3.3"
+
+services:
+  elasticsearch:
+    image: elasticsearch:8.8.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+
+  mongodbserver:
+    image: mongo
+    container_name: ieq_pipe-mongo
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - 1236:27017/tcp
+    volumes:
+      - docker-compose-studies:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo_db
+      MONGO_INITDB_ROOT_PASSWORD: A1ym%b521Or
+      MONGO_INITDB_DATABASE: ieq_db
+    networks:
+      - net_ieq
+
+  redis:
+    image: redis
+    container_name: ieq_pipe-redis
+    restart: always
+    ports:
+      - "6378:6379"
+    networks:
+      - net_ieq
+
+networks:
+    net_ieq:
+volumes:
+  docker-compose-studies:
