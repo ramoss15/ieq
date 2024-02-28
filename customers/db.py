@@ -63,6 +63,10 @@ class CustomerDB:
 		return db.user_sessions.find_one({'session_id': session_id}, {'_id': False})
 	
 	@classmethod
+	def get_user_sessions_by_id(cls, user_id):
+		return db.user_sessions.find_one({'user_id': user_id}, {'_id': False})
+	
+	@classmethod
 	def create_user_session(cls, user, session_id):
 		expired_at = datetime.datetime.now() + datetime.timedelta(minutes=5)
 		return db.user_sessions.insert_one({'session_id': session_id, "user_id": user.get("id"), "expire_at": expired_at})

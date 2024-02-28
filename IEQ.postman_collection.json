@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "8cbe1013-0d25-4a7d-935b-d8ec5a76ea69",
+		"name": "IEQ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32328411"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"ram\", \"email\": \"ramp@test.com\", \"password\": \"password\"}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"ram\", \"email\": \"ramp@test.com\", \"password\": \"password\"}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer/signup",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer",
+										"signup"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 05:10:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"user already exists\"\n}"
+						},
+						{
+							"name": "Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"ram\", \"email\": \"ramp1@test.com\", \"password\": \"password\"}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer/signup",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 05:11:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wMUB0ZXN0LmNvbSIsImlkIjoiMDIzNjJiMjc5NTBhNGMyNmFjYWRmMzViYzYzMzBiNDUiLCJ1c2VyX3R5cGUiOjJ9.0V9K7YCbln1SYroj1zzqwRKnPvInXe0Oh0dzC_AJ9kg"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"ramp1@test.com\",\n    \"id\": \"02362b27950a4c26acadf35bc6330b45\",\n    \"name\": \"ram\",\n    \"user_type\": 2\n}"
+						},
+						{
+							"name": "No key error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"ram\", \"email\": \"ramp1@test.com\"}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer/signup",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer",
+										"signup"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 05:11:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"password is required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"ramp@test.com\", \"password\": \"password\"}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "scuessful login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"email\": \"ramp@test.com\", \"password\": \"password\"}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 05:18:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiI3NGM2NDczNDMzMzQ0YmUyOTU0MTMxZWRmODljZmFhNCIsInVzZXJfdHlwZSI6Mn0.CM6zlG9GGhb0qTbCYRHkrWDtgCU68_eTEuLPWYALL-A"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"email\": \"ramp@test.com\",\n        \"id\": \"74c6473433344be2954131edf89cfaa4\",\n        \"name\": \"ram\"\n    }\n]"
+						},
+						{
+							"name": "Invaild cred",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"email\": \"ramp@test.com\", \"password\": \"df\"}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 05:19:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"invalid credentials\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

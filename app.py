@@ -1,6 +1,6 @@
 import logging
 
-from flask import Flask
+from flask import Flask, render_template
 
 from customers import customer
 from orders import order
@@ -15,6 +15,10 @@ logging.info(f"redis connected: {RedisCache.redis_client.client()}")
 app.register_blueprint(customer)
 app.register_blueprint(order)
 app.register_blueprint(product)
+
+@app.route('/')
+def index():
+	return render_template("index.html")
 
 
 if __name__ == '__main__':

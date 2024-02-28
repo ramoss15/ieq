@@ -44,6 +44,10 @@ class Auth:
 	
 	@classmethod
 	def authorize(cls, user: dict):
-		encoded_jwt = jwt.encode(user, 'secret', algorithm='HS256')
-		CustomerDB.create_user_session(user, encoded_jwt)
+		get_session = CustomerDB.get_user_sessions_by_id(user.get('id'))
+		if  get_session:
+			return get_session.get('session_id')
+		else:
+			encoded_jwt = jwt.encode(user, 'secret', algorithm='HS256')
+			CustomerDB.create_user_session(user, encoded_jwt)
 		return encoded_jwt

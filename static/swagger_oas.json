@@ -1,0 +1,296 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IEQ",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:5000"
+    }
+  ],
+  "tags": [
+    {
+      "name": "customer"
+    }
+  ],
+  "paths": {
+    "/customer/signup": {
+      "post": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Signup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "ram",
+                  "email": "ramp@test.com",
+                  "password": "password"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 05:11:09 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "94"
+                }
+              },
+              "Authorization": {
+                "schema": {
+                  "type": "number",
+                  "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wMUB0ZXN0LmNvbSIsImlkIjoiMDIzNjJiMjc5NTBhNGMyNmFjYWRmMzViYzYzMzBiNDUiLCJ1c2VyX3R5cGUiOjJ9.0V9K7YCbln1SYroj1zzqwRKnPvInXe0Oh0dzC_AJ9kg"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "email": "ramp1@test.com",
+                  "id": "02362b27950a4c26acadf35bc6330b45",
+                  "name": "ram",
+                  "user_type": 2
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD REQUEST",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 05:10:09 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "32"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "user exists",
+                    "value": {
+                      "error": "user already exists"
+                    }
+                  },
+                  "example-1": {
+                    "summary": "No key error",
+                    "value": {
+                      "error": "password is required"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/login": {
+      "post": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "ramp@test.com",
+                  "password": "password"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 05:18:32 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "81"
+                }
+              },
+              "Authorization": {
+                "schema": {
+                  "type": "string",
+                  "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiI3NGM2NDczNDMzMzQ0YmUyOTU0MTMxZWRmODljZmFhNCIsInVzZXJfdHlwZSI6Mn0.CM6zlG9GGhb0qTbCYRHkrWDtgCU68_eTEuLPWYALL-A"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": [
+                  {
+                    "email": "ramp@test.com",
+                    "id": "74c6473433344be2954131edf89cfaa4",
+                    "name": "ram"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "BAD REQUEST",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 05:19:05 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "32"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "error": "invalid credentials"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
