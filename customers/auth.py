@@ -37,6 +37,7 @@ class Auth:
 					msg = "payload must be a valid json"
 					return jsonify({"error": msg}), 400, {'Content-Type': 'application/json'}
 				request.email = get_user.get('email')
+				request.user_id = get_user.get('user_id')
 				return f(*args, **kw)
 			
 			return wrapper

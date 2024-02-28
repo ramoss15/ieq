@@ -6,3 +6,4 @@ class Error(Enum):
 	PRODUCT_NOT_FOUND = "Product not found"
 	PRODUCT_ALREADY_EXISTS = "Product already exists"
 	Short_term = "Name must be at least 3 characters"
+	Product_ID_REQUIRED = "Product ID is required"

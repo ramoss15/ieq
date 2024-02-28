@@ -29,6 +29,9 @@ def get_all_products():
 @product.route('/<product_id>', endpoint='get_product')
 @Auth.authenticate()
 def get_product(product_id):
+	if not product_id:
+		return jsonify({"error": Error.Product_ID_REQUIRED.value}), 404
+	product_id = int(product_id)
 	product = RedisCache.get_with_key(product_id, NameSpace.PRODUCTS.value)
 	if not product:
 		product = productDB.get_product(product_id)

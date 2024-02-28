@@ -12,6 +12,7 @@ IEQ is a Python package that provides a flexible and extensible ecom app system 
 - Admin can update/delete orders for users
 - Admin can give permission to manage orders/products
 
+
 ## Setup
 
 ## setup database and caching server also Elastic search on Docker
@@ -102,6 +103,7 @@ For any questions or inquiries, please feel free to reach out to us:
 
 - **Email:** [Email](mailto:rampratap305@gmail.com)
 - **Phone:** [7888924374](tel:7888924374)
+# Note: For running proper ECOM functionality we required cart and address functionality. Which I haven't added yet.
 
 
 

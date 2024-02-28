@@ -9,7 +9,7 @@ client = Elasticsearch(hosts=['http://localhost:9200', 'http://localhost:9300'],
 def create_index(index_name):
     return client.indices.create(index=index_name)
 
-@cc.task
+
 def create_index_data(index_name: str, index_data: dict):
     index_data = dict(product_name=index_data.get('product_name'), product_id=index_data.get('id'))
     index_id = index_data.get('product_id')

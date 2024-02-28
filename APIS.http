@@ -15,11 +15,32 @@ Content-Type: application/json
 GET  http://127.0.0.1:5000/product/searching?term=Product
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
 
-### Product searching
-GET  http://127.0.0.1:5000/product/searching?term=Product
+### Product by id
+GET  http://127.0.0.1:5000/product/5
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
 
 
-### Product searching
-GET  http://127.0.0.1:5000/product/searching?term=Product
+### all Product
+GET  http://127.0.0.1:5000/product/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
+
+### create order
+POST  http://127.0.0.1:5000/order/create_order
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
+Content-Type: application/json
+
+{
+"products" : [{"id": 1, "count": 2}, {"id": 2, "count": 1} ],
+  "address": "1kjcdscjkvdsvwrew",
+  "phone": "9214821402"
+}
+
+### view all orders
+GET  http://127.0.0.1:5000/order/get_all_orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
+
+
+### view order
+GET  http://127.0.0.1:5000/order/get_order/b2f5e27dab2d4685bd5c14f2eea911b5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
+

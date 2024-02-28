@@ -374,6 +374,910 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/searching?term=Product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"searching"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "Product"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No product found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/product/searching?term=Product",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"product",
+										"searching"
+									],
+									"query": [
+										{
+											"key": "term",
+											"value": "Product"
+										}
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:00:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No products found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Product by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/product/5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"product",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:19:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category\": \"Electronics\",\n    \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n    \"deleted\": false,\n    \"description\": \"This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n    \"id\": 5,\n    \"image\": \"https://picsum.photos/200/200?random=624\",\n    \"name\": \"Product 731\",\n    \"price\": 7618.56,\n    \"rating\": 3.1,\n    \"reviews\": [],\n    \"stock\": 98\n}"
+						},
+						{
+							"name": "Product not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/product/50000",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"product",
+										"50000"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:19:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Product not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All produucts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All produucts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/product/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:19:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4016"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 1,\n        \"image\": \"https://picsum.photos/200/200?random=89\",\n        \"name\": \"Product 214\",\n        \"price\": 1252.31,\n        \"rating\": 4.4,\n        \"reviews\": [],\n        \"stock\": 30\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 2,\n        \"image\": \"https://picsum.photos/200/200?random=724\",\n        \"name\": \"Product 445\",\n        \"price\": 3983.51,\n        \"rating\": 3.1,\n        \"reviews\": [],\n        \"stock\": 60\n    },\n    {\n        \"category\": \"Home & Garden\",\n        \"category_id\": \"9339ce8257c64b13b82f3275f66d8469\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 352. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 3,\n        \"image\": \"https://picsum.photos/200/200?random=423\",\n        \"name\": \"Product 756\",\n        \"price\": 2649.43,\n        \"rating\": 3.7,\n        \"reviews\": [],\n        \"stock\": 31\n    },\n    {\n        \"category\": \"Beauty\",\n        \"category_id\": \"63a85abf9e8c4e6594a801193b6a8573\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 442. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 4,\n        \"image\": \"https://picsum.photos/200/200?random=687\",\n        \"name\": \"Product 194\",\n        \"price\": 8977.77,\n        \"rating\": 3.9,\n        \"reviews\": [],\n        \"stock\": 26\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 5,\n        \"image\": \"https://picsum.photos/200/200?random=624\",\n        \"name\": \"Product 731\",\n        \"price\": 7618.56,\n        \"rating\": 3.1,\n        \"reviews\": [],\n        \"stock\": 98\n    },\n    {\n        \"category\": \"Home & Garden\",\n        \"category_id\": \"9339ce8257c64b13b82f3275f66d8469\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 681. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 6,\n        \"image\": \"https://picsum.photos/200/200?random=183\",\n        \"name\": \"Product 150\",\n        \"price\": 9431.58,\n        \"rating\": 3.5,\n        \"reviews\": [],\n        \"stock\": 18\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 311. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 7,\n        \"image\": \"https://picsum.photos/200/200?random=622\",\n        \"name\": \"Product 426\",\n        \"price\": 4353.89,\n        \"rating\": 3.2,\n        \"reviews\": [],\n        \"stock\": 17\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 225. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 8,\n        \"image\": \"https://picsum.photos/200/200?random=743\",\n        \"name\": \"Product 1\",\n        \"price\": 1018.41,\n        \"rating\": 3.7,\n        \"reviews\": [],\n        \"stock\": 26\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 682. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 9,\n        \"image\": \"https://picsum.photos/200/200?random=545\",\n        \"name\": \"Product 47\",\n        \"price\": 2353.32,\n        \"rating\": 4.2,\n        \"reviews\": [],\n        \"stock\": 75\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 409. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 10,\n        \"image\": \"https://picsum.photos/200/200?random=354\",\n        \"name\": \"Product 212\",\n        \"price\": 1273.05,\n        \"rating\": 4.6,\n        \"reviews\": [],\n        \"stock\": 12\n    }\n]"
+						},
+						{
+							"name": "next 10 products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/product/?limit=10&offset10",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset10",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:20:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4016"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 1,\n        \"image\": \"https://picsum.photos/200/200?random=89\",\n        \"name\": \"Product 214\",\n        \"price\": 1252.31,\n        \"rating\": 4.4,\n        \"reviews\": [],\n        \"stock\": 30\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 2,\n        \"image\": \"https://picsum.photos/200/200?random=724\",\n        \"name\": \"Product 445\",\n        \"price\": 3983.51,\n        \"rating\": 3.1,\n        \"reviews\": [],\n        \"stock\": 60\n    },\n    {\n        \"category\": \"Home & Garden\",\n        \"category_id\": \"9339ce8257c64b13b82f3275f66d8469\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 352. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 3,\n        \"image\": \"https://picsum.photos/200/200?random=423\",\n        \"name\": \"Product 756\",\n        \"price\": 2649.43,\n        \"rating\": 3.7,\n        \"reviews\": [],\n        \"stock\": 31\n    },\n    {\n        \"category\": \"Beauty\",\n        \"category_id\": \"63a85abf9e8c4e6594a801193b6a8573\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 442. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 4,\n        \"image\": \"https://picsum.photos/200/200?random=687\",\n        \"name\": \"Product 194\",\n        \"price\": 8977.77,\n        \"rating\": 3.9,\n        \"reviews\": [],\n        \"stock\": 26\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 5,\n        \"image\": \"https://picsum.photos/200/200?random=624\",\n        \"name\": \"Product 731\",\n        \"price\": 7618.56,\n        \"rating\": 3.1,\n        \"reviews\": [],\n        \"stock\": 98\n    },\n    {\n        \"category\": \"Home & Garden\",\n        \"category_id\": \"9339ce8257c64b13b82f3275f66d8469\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 681. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 6,\n        \"image\": \"https://picsum.photos/200/200?random=183\",\n        \"name\": \"Product 150\",\n        \"price\": 9431.58,\n        \"rating\": 3.5,\n        \"reviews\": [],\n        \"stock\": 18\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 311. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 7,\n        \"image\": \"https://picsum.photos/200/200?random=622\",\n        \"name\": \"Product 426\",\n        \"price\": 4353.89,\n        \"rating\": 3.2,\n        \"reviews\": [],\n        \"stock\": 17\n    },\n    {\n        \"category\": \"Electronics\",\n        \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 225. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 8,\n        \"image\": \"https://picsum.photos/200/200?random=743\",\n        \"name\": \"Product 1\",\n        \"price\": 1018.41,\n        \"rating\": 3.7,\n        \"reviews\": [],\n        \"stock\": 26\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 682. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 9,\n        \"image\": \"https://picsum.photos/200/200?random=545\",\n        \"name\": \"Product 47\",\n        \"price\": 2353.32,\n        \"rating\": 4.2,\n        \"reviews\": [],\n        \"stock\": 75\n    },\n    {\n        \"category\": \"Clothing\",\n        \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n        \"deleted\": false,\n        \"description\": \"This is a description for product 409. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n        \"id\": 10,\n        \"image\": \"https://picsum.photos/200/200?random=354\",\n        \"name\": \"Product 212\",\n        \"price\": 1273.05,\n        \"rating\": 4.6,\n        \"reviews\": [],\n        \"stock\": 12\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Get_all_orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/get_all_orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"get_all_orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/get_order/b2f5e27dab2d4685bd5c14f2eea911b5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"get_order",
+								"b2f5e27dab2d4685bd5c14f2eea911b5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get order by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/order/get_order/b2f5e27dab2d4685bd5c14f2eea911b5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"order",
+										"get_order",
+										"b2f5e27dab2d4685bd5c14f2eea911b5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:42:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1020"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": \"1kjcdscjkvdsvwrew\",\n        \"order_id\": \"b2f5e27dab2d4685bd5c14f2eea911b5\",\n        \"order_status\": [\n            {\n                \"name\": \"Pending\"\n            }\n        ],\n        \"phone\": \"9214821402\",\n        \"products\": [\n            {\n                \"category\": \"Clothing\",\n                \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n                \"count\": 2,\n                \"deleted\": false,\n                \"description\": \"This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n                \"id\": 1,\n                \"image\": \"https://picsum.photos/200/200?random=89\",\n                \"name\": \"Product 214\",\n                \"price\": 1252.31,\n                \"rating\": 4.4,\n                \"reviews\": [],\n                \"stock\": 30,\n                \"total\": 2504.62\n            },\n            {\n                \"category\": \"Electronics\",\n                \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n                \"count\": 1,\n                \"deleted\": false,\n                \"description\": \"This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n                \"id\": 2,\n                \"image\": \"https://picsum.photos/200/200?random=724\",\n                \"name\": \"Product 445\",\n                \"price\": 3983.51,\n                \"rating\": 3.1,\n                \"reviews\": [],\n                \"stock\": 60,\n                \"total\": 3983.51\n            }\n        ],\n        \"total\": 6488.13\n    }\n]"
+						},
+						{
+							"name": "No order found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/order/get_order/b2f5e27dab2d4685bd5c14f2eea911b",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"order",
+										"get_order",
+										"b2f5e27dab2d4685bd5c14f2eea911b"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.9.6"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:43:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"order not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"products\" : [{\"id\": 1, \"count\": 2}, {\"id\": 2, \"count\": 1} ],\n          \"address\": \"1kjcdscjkvdsvwrew\",\n          \"phone\": \"9214821402\"\n        }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/order/create_order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"order",
+						"create_order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sucess order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"products\" : [{\"id\": 1, \"count\": 2}, {\"id\": 2, \"count\": 1} ],\n          \"address\": \"1kjcdscjkvdsvwrew\",\n          \"phone\": \"9214821402\"\n        }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/create_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create_order"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.9.6"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 06:32:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1015"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"address\": \"1kjcdscjkvdsvwrew\",\n    \"deleted\": false,\n    \"order_id\": \"2a5b9d18cd3c480b94f085b0ccbe3936\",\n    \"order_status\": 1,\n    \"phone\": \"9214821402\",\n    \"products\": [\n        {\n            \"category\": \"Clothing\",\n            \"category_id\": \"61c56f61b7fd447496248ced88879515\",\n            \"count\": 2,\n            \"deleted\": false,\n            \"description\": \"This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            \"id\": 1,\n            \"image\": \"https://picsum.photos/200/200?random=89\",\n            \"name\": \"Product 214\",\n            \"price\": 1252.31,\n            \"rating\": 4.4,\n            \"reviews\": [],\n            \"stock\": 30,\n            \"total\": 2504.62\n        },\n        {\n            \"category\": \"Electronics\",\n            \"category_id\": \"6034e1c2fa0d4c55a00615a4253f321d\",\n            \"count\": 1,\n            \"deleted\": false,\n            \"description\": \"This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            \"id\": 2,\n            \"image\": \"https://picsum.photos/200/200?random=724\",\n            \"name\": \"Product 445\",\n            \"price\": 3983.51,\n            \"rating\": 3.1,\n            \"reviews\": [],\n            \"stock\": 60,\n            \"total\": 3983.51\n        }\n    ],\n    \"total\": 6488.13\n}"
+				},
+				{
+					"name": "Product required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"products\" : [],\n          \"address\": \"1kjcdscjkvdsvwrew\",\n          \"phone\": \"9214821402\"\n        }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/create_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create_order"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.9.6"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 06:33:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"products is required\"\n}"
+				},
+				{
+					"name": "Invalie product ordered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"products\" : [{\"id\": 1, \"count\": 2}, {\"id\": 50000, \"count\": 1} ],\n          \"address\": \"1kjcdscjkvdsvwrew\",\n          \"phone\": \"9214821402\"\n        }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/create_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create_order"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.9.6"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 06:33:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Some invalid product ordered\"\n}"
+				},
+				{
+					"name": "Address Reuired",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"products\" : [{\"id\": 1, \"count\": 2}, {\"id\": 20, \"count\": 1} ],\n          \"address\": \"\",\n          \"phone\": \"9214821402\"\n        }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/create_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create_order"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.9.6"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 06:33:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"address is required\"\n}"
+				},
+				{
+					"name": "Phone required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"products\" : [{\"id\": 1, \"count\": 2}, {\"id\": 20, \"count\": 1} ],\n          \"address\": \"1kjcdscjkvdsvwrew\",\n          \"phone\": \"\"\n        }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order/create_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"create_order"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.9.6"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 06:34:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"phone is required\"\n}"
+				}
+			]
 		}
 	]
 }

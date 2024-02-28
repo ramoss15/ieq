@@ -8,7 +8,7 @@ db = get_db()
 class productDB:
 	@classmethod
 	def get_all_products(cls, limit=10, offset=0):
-		return db.products.find({}, {'_id': False}).limit(limit).skip(offset)
+		return list(db.products.find({}, {'_id': False}).limit(limit).skip(offset))
 	
 	@classmethod
 	def get_product(cls, product_id: int):
@@ -16,7 +16,7 @@ class productDB:
 	
 	@classmethod
 	def get_product_by_ids(cls, product_ids: list):
-		return db.products.find({'id': {'$in': product_ids}}, {'_id': False})
+		return list(db.products.find({'id': {'$in': product_ids}}, {'_id': False}))
 	
 	@classmethod
 	def get_product_by_name(cls, name: str):
@@ -24,7 +24,7 @@ class productDB:
 	
 	@classmethod
 	def get_products_by_category(cls, category: str):
-		return db.products.find({'category': category}, {'_id': False})
+		return list(db.products.find({'category': category}, {'_id': False}))
 	
 	@classmethod
 	def create_product(cls, product):
@@ -54,7 +54,7 @@ class productDB:
 	
 	@classmethod
 	def get_all_categories(cls):
-		return db.categories.find({}, {'_id': False})
+		return list(db.categories.find({}, {'_id': False}))
 	
 	@classmethod
 	def get_category(cls, category_id):

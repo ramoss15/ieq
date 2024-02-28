@@ -50,7 +50,7 @@ if db_name not in dblist:
 				products, categories = dummy_products(1000)
 				for product in products:
 					product.update({'deleted': False})
-					create_index_data.delay(col, product)
+					create_index_data(col, product)
 				db.products.insert_many(products)
 			elif col == 'product_categories':
 				# Generate dummy product categories

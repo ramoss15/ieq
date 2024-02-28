@@ -13,17 +13,19 @@ order = Blueprint('order', __name__, url_prefix='/order')
 @order.route('/get_all_orders', endpoint='get_all_orders')
 @Auth.authenticate()
 def get_all_orders():
+	user_id = request.user_id
 	limit = 10
 	offset = request.args.get('offset')
 	offset = int(offset) if offset else 10
-	orders = OrderDB.get_all_orders(limit, offset)
-	return jsonify(orders), 200
+	orders = OrderDB.get_all_orders(user_id, limit, offset)
+	return jsonify({"orders": orders}), 200
 
 
 @order.route('/get_order/<order_id>', endpoint='get_order')
 @Auth.authenticate()
 def get_order(order_id):
-	order = OrderDB.get_order(order_id)
+	user_id = request.user_id
+	order = OrderDB.get_order(order_id, user_id)
 	if not order:
 		return jsonify({"error": "order not found"}), 404
 	return jsonify(order), 200
@@ -35,10 +37,14 @@ def get_order(order_id):
 @Auth.authenticate()
 def create_order():
 	data: dict = request.json
+	if len(data.get('address')) < 10:
+		return jsonify({"error": "address must be at least 10 characters"}), 400
+	if len(data.get('phone')) != 10:
+		return jsonify({"error": "phone must be 10 characters"}), 400
 	total: int = 0
 	product_ids: dict = dict()
 	for product in data.get('products'):
-		product_ids[(product.get('id'))] = product_ids.get(product.get('id'), 0) + product.get('count')
+		product_ids[(product.get('id'))] = product_ids.get(product.get('id'), 0) + product.get('count', 1)
 	products = productDB.get_product_by_ids(list(product_ids.keys()))
 	for product in products:
 		if product.get('stock') < product_ids.get(product.get('id')):
@@ -57,7 +63,8 @@ def create_order():
 		return jsonify({"error": "total must be greater than 0"}), 400
 	
 	data['order_id'] = uuid.uuid4().hex
-	status, data = OrderDB.create_order.delay(data)
+	data['user_id'] = request.user_id
+	status, data = OrderDB.create_order(data)
 	if not status:
 		return jsonify({"error": data}), 400
 	return jsonify(data), 201
@@ -84,5 +91,5 @@ def delete_order(order_id):
 	order = OrderDB.get_order(order_id)
 	if not order:
 		return jsonify({"error": "order not found"}), 404
-	OrderDB.delete_order.delay(order_id)
+	OrderDB.delete_order(order_id)
 	return jsonify({"message": "order deleted"}), 200

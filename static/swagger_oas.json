@@ -12,6 +12,12 @@
   "tags": [
     {
       "name": "customer"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "order"
     }
   ],
   "paths": {
@@ -285,6 +291,912 @@
                 },
                 "example": {
                   "error": "invalid credentials"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/searching": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Product search",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          },
+          {
+            "name": "term",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Product"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "NOT FOUND",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:00:23 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "30"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "error": "No products found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/5": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Product by id",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:19:05 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "403"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "category": "Electronics",
+                  "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                  "deleted": false,
+                  "description": "This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                  "id": 5,
+                  "image": "https://picsum.photos/200/200?random=624",
+                  "name": "Product 731",
+                  "price": 7618.56,
+                  "rating": 3.1,
+                  "reviews": [],
+                  "stock": 98
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT FOUND",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:19:21 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "30"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "error": "Product not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "All produucts",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:19:53 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "4016"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "All produucts",
+                    "value": [
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 1,
+                        "image": "https://picsum.photos/200/200?random=89",
+                        "name": "Product 214",
+                        "price": 1252.31,
+                        "rating": 4.4,
+                        "reviews": [],
+                        "stock": 30
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 2,
+                        "image": "https://picsum.photos/200/200?random=724",
+                        "name": "Product 445",
+                        "price": 3983.51,
+                        "rating": 3.1,
+                        "reviews": [],
+                        "stock": 60
+                      },
+                      {
+                        "category": "Home & Garden",
+                        "category_id": "9339ce8257c64b13b82f3275f66d8469",
+                        "deleted": false,
+                        "description": "This is a description for product 352. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 3,
+                        "image": "https://picsum.photos/200/200?random=423",
+                        "name": "Product 756",
+                        "price": 2649.43,
+                        "rating": 3.7,
+                        "reviews": [],
+                        "stock": 31
+                      },
+                      {
+                        "category": "Beauty",
+                        "category_id": "63a85abf9e8c4e6594a801193b6a8573",
+                        "deleted": false,
+                        "description": "This is a description for product 442. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 4,
+                        "image": "https://picsum.photos/200/200?random=687",
+                        "name": "Product 194",
+                        "price": 8977.77,
+                        "rating": 3.9,
+                        "reviews": [],
+                        "stock": 26
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 5,
+                        "image": "https://picsum.photos/200/200?random=624",
+                        "name": "Product 731",
+                        "price": 7618.56,
+                        "rating": 3.1,
+                        "reviews": [],
+                        "stock": 98
+                      },
+                      {
+                        "category": "Home & Garden",
+                        "category_id": "9339ce8257c64b13b82f3275f66d8469",
+                        "deleted": false,
+                        "description": "This is a description for product 681. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 6,
+                        "image": "https://picsum.photos/200/200?random=183",
+                        "name": "Product 150",
+                        "price": 9431.58,
+                        "rating": 3.5,
+                        "reviews": [],
+                        "stock": 18
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 311. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 7,
+                        "image": "https://picsum.photos/200/200?random=622",
+                        "name": "Product 426",
+                        "price": 4353.89,
+                        "rating": 3.2,
+                        "reviews": [],
+                        "stock": 17
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 225. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 8,
+                        "image": "https://picsum.photos/200/200?random=743",
+                        "name": "Product 1",
+                        "price": 1018.41,
+                        "rating": 3.7,
+                        "reviews": [],
+                        "stock": 26
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 682. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 9,
+                        "image": "https://picsum.photos/200/200?random=545",
+                        "name": "Product 47",
+                        "price": 2353.32,
+                        "rating": 4.2,
+                        "reviews": [],
+                        "stock": 75
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 409. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 10,
+                        "image": "https://picsum.photos/200/200?random=354",
+                        "name": "Product 212",
+                        "price": 1273.05,
+                        "rating": 4.6,
+                        "reviews": [],
+                        "stock": 12
+                      }
+                    ]
+                  },
+                  "example-1": {
+                    "summary": "next 10 products",
+                    "value": [
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 1,
+                        "image": "https://picsum.photos/200/200?random=89",
+                        "name": "Product 214",
+                        "price": 1252.31,
+                        "rating": 4.4,
+                        "reviews": [],
+                        "stock": 30
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 2,
+                        "image": "https://picsum.photos/200/200?random=724",
+                        "name": "Product 445",
+                        "price": 3983.51,
+                        "rating": 3.1,
+                        "reviews": [],
+                        "stock": 60
+                      },
+                      {
+                        "category": "Home & Garden",
+                        "category_id": "9339ce8257c64b13b82f3275f66d8469",
+                        "deleted": false,
+                        "description": "This is a description for product 352. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 3,
+                        "image": "https://picsum.photos/200/200?random=423",
+                        "name": "Product 756",
+                        "price": 2649.43,
+                        "rating": 3.7,
+                        "reviews": [],
+                        "stock": 31
+                      },
+                      {
+                        "category": "Beauty",
+                        "category_id": "63a85abf9e8c4e6594a801193b6a8573",
+                        "deleted": false,
+                        "description": "This is a description for product 442. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 4,
+                        "image": "https://picsum.photos/200/200?random=687",
+                        "name": "Product 194",
+                        "price": 8977.77,
+                        "rating": 3.9,
+                        "reviews": [],
+                        "stock": 26
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 642. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 5,
+                        "image": "https://picsum.photos/200/200?random=624",
+                        "name": "Product 731",
+                        "price": 7618.56,
+                        "rating": 3.1,
+                        "reviews": [],
+                        "stock": 98
+                      },
+                      {
+                        "category": "Home & Garden",
+                        "category_id": "9339ce8257c64b13b82f3275f66d8469",
+                        "deleted": false,
+                        "description": "This is a description for product 681. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 6,
+                        "image": "https://picsum.photos/200/200?random=183",
+                        "name": "Product 150",
+                        "price": 9431.58,
+                        "rating": 3.5,
+                        "reviews": [],
+                        "stock": 18
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 311. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 7,
+                        "image": "https://picsum.photos/200/200?random=622",
+                        "name": "Product 426",
+                        "price": 4353.89,
+                        "rating": 3.2,
+                        "reviews": [],
+                        "stock": 17
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "deleted": false,
+                        "description": "This is a description for product 225. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 8,
+                        "image": "https://picsum.photos/200/200?random=743",
+                        "name": "Product 1",
+                        "price": 1018.41,
+                        "rating": 3.7,
+                        "reviews": [],
+                        "stock": 26
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 682. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 9,
+                        "image": "https://picsum.photos/200/200?random=545",
+                        "name": "Product 47",
+                        "price": 2353.32,
+                        "rating": 4.2,
+                        "reviews": [],
+                        "stock": 75
+                      },
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "deleted": false,
+                        "description": "This is a description for product 409. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 10,
+                        "image": "https://picsum.photos/200/200?random=354",
+                        "name": "Product 212",
+                        "price": 1273.05,
+                        "rating": 4.6,
+                        "reviews": [],
+                        "stock": 12
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/get_all_orders": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get_all_orders",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/order/get_order/b2f5e27dab2d4685bd5c14f2eea911b5": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get order by id",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:42:46 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "1020"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": [
+                  {
+                    "address": "1kjcdscjkvdsvwrew",
+                    "order_id": "b2f5e27dab2d4685bd5c14f2eea911b5",
+                    "order_status": [
+                      {
+                        "name": "Pending"
+                      }
+                    ],
+                    "phone": "9214821402",
+                    "products": [
+                      {
+                        "category": "Clothing",
+                        "category_id": "61c56f61b7fd447496248ced88879515",
+                        "count": 2,
+                        "deleted": false,
+                        "description": "This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 1,
+                        "image": "https://picsum.photos/200/200?random=89",
+                        "name": "Product 214",
+                        "price": 1252.31,
+                        "rating": 4.4,
+                        "reviews": [],
+                        "stock": 30,
+                        "total": 2504.62
+                      },
+                      {
+                        "category": "Electronics",
+                        "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                        "count": 1,
+                        "deleted": false,
+                        "description": "This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "id": 2,
+                        "image": "https://picsum.photos/200/200?random=724",
+                        "name": "Product 445",
+                        "price": 3983.51,
+                        "rating": 3.1,
+                        "reviews": [],
+                        "stock": 60,
+                        "total": 3983.51
+                      }
+                    ],
+                    "total": 6488.13
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "NOT FOUND",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:43:21 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "28"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "error": "order not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/create_order": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Create order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "products": [
+                    {
+                      "id": 1,
+                      "count": 2
+                    },
+                    {
+                      "id": 2,
+                      "count": 1
+                    }
+                  ],
+                  "address": "1kjcdscjkvdsvwrew",
+                  "phone": "9214821402"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:32:12 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "1015"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "address": "1kjcdscjkvdsvwrew",
+                  "deleted": false,
+                  "order_id": "2a5b9d18cd3c480b94f085b0ccbe3936",
+                  "order_status": 1,
+                  "phone": "9214821402",
+                  "products": [
+                    {
+                      "category": "Clothing",
+                      "category_id": "61c56f61b7fd447496248ced88879515",
+                      "count": 2,
+                      "deleted": false,
+                      "description": "This is a description for product 544. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      "id": 1,
+                      "image": "https://picsum.photos/200/200?random=89",
+                      "name": "Product 214",
+                      "price": 1252.31,
+                      "rating": 4.4,
+                      "reviews": [],
+                      "stock": 30,
+                      "total": 2504.62
+                    },
+                    {
+                      "category": "Electronics",
+                      "category_id": "6034e1c2fa0d4c55a00615a4253f321d",
+                      "count": 1,
+                      "deleted": false,
+                      "description": "This is a description for product 730. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      "id": 2,
+                      "image": "https://picsum.photos/200/200?random=724",
+                      "name": "Product 445",
+                      "price": 3983.51,
+                      "rating": 3.1,
+                      "reviews": [],
+                      "stock": 60,
+                      "total": 3983.51
+                    }
+                  ],
+                  "total": 6488.13
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD REQUEST",
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "number",
+                  "example": "Werkzeug/3.0.1 Python/3.9.6"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 28 Feb 2024 06:33:03 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "33"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Product required",
+                    "value": {
+                      "error": "products is required"
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Invalie product ordered",
+                    "value": {
+                      "error": "Some invalid product ordered"
+                    }
+                  },
+                  "example-2": {
+                    "summary": "Address Reuired",
+                    "value": {
+                      "error": "address is required"
+                    }
+                  },
+                  "example-3": {
+                    "summary": "Phone required",
+                    "value": {
+                      "error": "phone is required"
+                    }
+                  }
                 }
               }
             }

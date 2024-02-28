@@ -1,3 +1,5 @@
+import json
+
 import redis
 
 
@@ -6,10 +8,14 @@ class RedisCache:
 	@classmethod
 	def key_with_ttl(cls, key: str, data, ttl_in_seconds: int, namespace: str = ''):
 		key = f"{namespace}:{key}"
+		data = json.dumps(data)
 		cls.redis_client.setex(key, ttl_in_seconds, data)
 		return True
 	
 	@classmethod
 	def get_with_key(cls, key: str, namespace: str = ''):
 		key = f"{namespace}:{key}"
-		return cls.redis_client.get(key)
+		data = cls.redis_client.get(key)
+		if data:
+			return json.loads(data)
+		return None
