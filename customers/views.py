@@ -43,14 +43,14 @@ def user_login():
 	return response
 
 @customer.route('/profile', methods=['GET'], endpoint='get_profile')
-@Auth.authenticate
+@Auth.authenticate()
 def get_profile():
 	get_user = list(CustomerDB.get_users(request.email, required_fields=['id', 'name', 'email']))
 	response = jsonify(get_user)
 	return response
 
 @customer.route('/update_profile', methods=['PATCH'], endpoint='update_profile')
-@Auth.authenticate
+@Auth.authenticate()
 @validate_json
 @validate_schema(keys=dict(name=str))
 def update_profile():

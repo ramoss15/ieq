@@ -11,7 +11,7 @@ order = Blueprint('order', __name__, url_prefix='/order')
 
 
 @order.route('/get_all_orders', endpoint='get_all_orders')
-@Auth.authenticate
+@Auth.authenticate()
 def get_all_orders():
 	limit = 10
 	offset = request.args.get('offset')
@@ -21,7 +21,7 @@ def get_all_orders():
 
 
 @order.route('/get_order/<order_id>', endpoint='get_order')
-@Auth.authenticate
+@Auth.authenticate()
 def get_order(order_id):
 	order = OrderDB.get_order(order_id)
 	if not order:
@@ -32,7 +32,7 @@ def get_order(order_id):
 @order.route('/create_order', methods=['POST'], endpoint='create_order')
 @validate_json
 @validate_schema(keys=dict(products=list, address=str, phone=str))
-@Auth.authenticate
+@Auth.authenticate()
 def create_order():
 	data: dict = request.json
 	total: int = 0
@@ -57,7 +57,7 @@ def create_order():
 		return jsonify({"error": "total must be greater than 0"}), 400
 	
 	data['order_id'] = uuid.uuid4().hex
-	status, data = OrderDB.create_order(data)
+	status, data = OrderDB.create_order.delay(data)
 	if not status:
 		return jsonify({"error": data}), 400
 	return jsonify(data), 201
@@ -84,5 +84,5 @@ def delete_order(order_id):
 	order = OrderDB.get_order(order_id)
 	if not order:
 		return jsonify({"error": "order not found"}), 404
-	OrderDB.delete_order(order_id)
+	OrderDB.delete_order.delay(order_id)
 	return jsonify({"message": "order deleted"}), 200

@@ -13,6 +13,13 @@ IEQ is a Python package that provides a flexible and extensible ecom app system 
 - Admin can give permission to manage orders/products
 
 ## Setup
+
+## setup database and caching server also Elastic search on Docker
+```shell
+docker compose -f docker-compose.yml -p ieq up -d
+
+```
+
  Create virtual env
 ```shell
 python3 -m venv <myenvname>

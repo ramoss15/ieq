@@ -1,5 +1,6 @@
 import uuid
 
+from celeryclient import cc
 from db import get_db
 
 db = get_db()
@@ -66,6 +67,7 @@ class OrderDB:
 		return list(agr)
 	
 	@classmethod
+	@cc.task
 	def create_order(cls, data):
 		data['deleted'] = False
 		try:
@@ -77,9 +79,10 @@ class OrderDB:
 	
 	@classmethod
 	def update_order(cls, order_id, data):
-		return db.orders.update_one({'order_id': order_id}, {'$set': data})
+		return True, db.orders.update_one({'order_id': order_id}, {'$set': data})
 	
 	@classmethod
+	@cc.task
 	def delete_order(cls, order_id):
 		return db.orders.update_one({'order_id': order_id}, {'$set': {'deleted': True}})
 	

@@ -1,14 +1,25 @@
-#Signup
+###Signup
 POST http://127.0.0.1:5000/customer/signup
 Content-Type: application/json
 
 {"name": "ram", "email": "ramp@test.com", "password": "password"}
 
-###
+### login
 POST  http://127.0.0.1:5000/customer/login
 Content-Type: application/json
 
 { "email": "ramp@test.com", "password": "password"}
 
 
+### Product searching
+GET  http://127.0.0.1:5000/product/searching?term=Product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
 
+### Product searching
+GET  http://127.0.0.1:5000/product/searching?term=Product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc
+
+
+### Product searching
+GET  http://127.0.0.1:5000/product/searching?term=Product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFtIiwiZW1haWwiOiJyYW1wQHRlc3QuY29tIiwiaWQiOiJjNDZkMTM4Yzk0MTY0NmFiYTc1YWFiMWIyYjYwNzZjYiIsInVzZXJfdHlwZSI6Mn0.KQC0fQl7Z9rQLDwbqzbQhm9FpNKRv8nB9uDG-kV5rWc

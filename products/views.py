@@ -10,7 +10,7 @@ product = Blueprint('product', __name__, url_prefix='/product')
 
 
 @product.route('/', endpoint='get_all_product')
-@Auth.authenticate
+@Auth.authenticate()
 def get_all_products():
 	try:
 		limit = int(request.args.get('limit'))
@@ -26,8 +26,8 @@ def get_all_products():
 	return jsonify(products), 200
 
 
-@product.route('/product/<product_id>', endpoint='get_product')
-@Auth.authenticate
+@product.route('/<product_id>', endpoint='get_product')
+@Auth.authenticate()
 def get_product(product_id):
 	product = RedisCache.get_with_key(product_id, NameSpace.PRODUCTS.value)
 	if not product:
@@ -50,8 +50,8 @@ def get_product_by_name(name):
 	return jsonify(product), 200
 
 
-@product.route('/product/category/<category>', endpoint='get_all_product_bycategory')
-@Auth.authenticate
+@product.route('/category/<category>', endpoint='get_all_product_bycategory')
+@Auth.authenticate()
 def get_products_by_category(category):
 	products = productDB.get_products_by_category(category)
 	if not products:
@@ -59,7 +59,7 @@ def get_products_by_category(category):
 	return jsonify(products), 200
 
 
-@product.route('/product', methods=['POST'], endpoint='create_product')
+@product.route('/', methods=['POST'], endpoint='create_product')
 @validate_json
 @validate_schema(
 	keys={'name': str, 'description': str, 'category': str, 'price': float, 'stock': int, 'image': str, 'rating': float,
@@ -75,7 +75,7 @@ def create_product():
 	return jsonify(data), 201
 
 
-@product.route('/product', methods=['PATCH'], endpoint='update_product')
+@product.route('/', methods=['PATCH'], endpoint='update_product')
 @validate_json
 @validate_schema(keys={'id': int})
 @Auth.authenticate(user="Admin")
@@ -97,7 +97,7 @@ def update_product():
 	return jsonify({"message": Constants.PRODUCT_UPDATED.value}), 201
 
 
-@product.route('/product', methods=['DELETE'], endpoint='delete_product')
+@product.route('/', methods=['DELETE'], endpoint='delete_product')
 @validate_json
 @validate_schema(keys={'id': int})
 @Auth.authenticate(user="Admin")
@@ -111,11 +111,11 @@ def delete_product():
 	return jsonify({"message": Constants.PRODUCT_DELETED.value}), 200
 
 
-@product.route('/products/searching', endpoint='product_searching')
-@Auth.authenticate
+@product.route('/searching', endpoint='product_searching')
+@Auth.authenticate()
 def get_products_by_searching():
 	term = request.args.get('term')
-	if len(term) < 3:
+	if not term or len(term) < 3:
 		return jsonify({"error": Error.Short_term.value}), 400
 	product_ids = search_product(NameSpace.PRODUCTS.value, term)
 	if not product_ids:
