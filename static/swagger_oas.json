@@ -1006,7 +1006,7 @@
     "/order/create_order": {
       "post": {
         "tags": [
-          "default"
+          "order"
         ],
         "summary": "Create order",
         "requestBody": {
